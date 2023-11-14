@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color:black;
+    color: #fff;
+    padding: 10px;
+}
+
+
+header > a{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+  
+
+}
+
+
+header h1 {
+    text-align: center;
+    margin: 1;
+    font-size: 3em;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+}
+
+
+ul > li {
+    text-align: center;
+    width: 300px;
+    display: inline-block;
+    margin-right: 20px;
+    transition: 0.3s ease;
+}
+ul > li:hover{
+    background-color: rgb(20, 20, 20);
+}
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+section {
+    padding: 20px;
+}
+
+
+form {
+    margin: 20px;
+  }
+ 
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+   
+  input, textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+  }
+
+
+    #enviar{
+    position: relative;
+    left: 750px;
+    border-radius: 20px;
+  }
+
+
+  #enviar:hover{
+    animation: pulse 1s infinite;
+  }
+
+
+  input[type="submit"] {
+
+
+
+
+    background-color:black;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+    transition: .2s ease-in;
+
+
+  }
+ 
+  input[type="submit"]:hover {
+    background-color:rgb(22, 22, 22);
+
+
+  }
+
+
+  section {
+    margin: 20px;
+  }
+   
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+ 
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+ 
+  p {
+    margin-bottom: 20px;
+  }
+
+
+
+  img{
+    width: 100pt;
+  }
+
+
+
+.imagens > a > img{
+    width: 500px;
+    height: 300px;
+
+
+}
+.imagens  > div{
+    text-align: start;
+    text-indent: 2em;
+    font-size: 12px;
+    color: #6b6b6b;
+}
+
+
+.news-item{
+    transition:  0.5s ease;
+    border-radius: 15px;
+
+
+}
+
+
+.news-item:hover{
+    transform: scale(1.05);
+    border-radius: 15px;
+}
+.news-container{
+    border-radius: 20px;
+}
+

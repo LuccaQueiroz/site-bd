@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .profile-box {
+            text-align: center;
+            font-size: 20px;
+            background-color: #000000;
+            color: #fff;
+            padding: 100px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-superior-direita {
+          position: center;
+          top: 10px;
+          right: 10px;
+          background-color: white;
+          color: black;
+          padding: 5px 10px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
+        }
+
+        #profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+
+        #user-name {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        #change-button {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #edit-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #edit-form input {
+            padding: 5px;
+            width: 100%;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-box">
+        <h1>Meu Perfil</h1>
+        <img src="placeholder.jpg" alt="Minha Foto de Perfil" id="profile-picture">
+        <p id="user-name"><span id="user-name-text">Seu nome</span></p>
+        <button id="change-button" onclick="showEditForm()"><i class="fas fa-edit"></i> Alterar dados</button>
+        <form id="edit-form">
+            <input type="file" accept="image/*" id="profile-picture-input" onchange="updateProfilePicture()">
+            <input type="text" id="user-name-input" placeholder="Novo Nome">
+            <button id="save-button" onclick="saveChanges()"><i class="fas fa-save"></i> Salvar</button>
+        </form>
+        <a href="Index.php" class="botao-superior-direita">Voltar</a>
+
+    </div>
+
+    <script>
+        function showEditForm() {
+            const editForm = document.getElementById("edit-form");
+            editForm.style.display = "block";
+        }
+
+        function updateProfilePicture() {
+            const pictureInput = document.getElementById("profile-picture-input");
+            const profilePicture = document.getElementById("profile-picture");
+            const file = pictureInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePicture.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function saveChanges() {
+            const userNameInput = document.getElementById("user-name-input");
+            const userNameText = document.getElementById("user-name-text");
+            const editForm = document.getElementById("edit-form");
+
+            const newName = userNameInput.value;
+            userNameText.textContent = newName;
+
+            editForm.style.display = "none";
+        }
+    </script>
+</body>
+</html>

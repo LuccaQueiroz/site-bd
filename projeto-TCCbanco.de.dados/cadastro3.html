@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://eteab.com.br/cms/wp-content/uploads/2019/11/LogoAB-final.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="cadastro.css">
+    
+
+</head>
+<body>
+    <form action="insert_bancodados.php" method="post">
+        <h2>Cadastre-se ou faça login</h2>
+        <div class="field radiobox">
+            <input type="radio" name="novidades" id="usuario" value="usuario" onchange="test()"><label for="nao">Usuário</label>
+            <input type="radio" name="novidades" id="responsavel" value="responsavel" checked onchange="test1()"><label for="nao">Responsável</label>
+        </div>
+        <label for="nome">Nome completo:</label>    
+        <input type="text" id="nome" name="nome" required>
+
+
+        <label for="email">Endereço de email:</label>
+        <input type="email" id="email" name="email" required>
+
+
+        <label for="telefone" id="RM">CPF:</label>
+        <input type="tel" id="telefone" name="CPF"  required>
+
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" minlength="8" required>
+        <span class="error">Sua senha deve conter pelo menos 8 caracteres</span>
+
+
+        <label for="confirma_senha">Confirme sua senha:</label>
+        <input type="password" id="confirma_senha" name="confirma_senha" minlength="8" required>
+        
+
+
+        <button type="submit">Cadastrar</button>
+        <a href="login.html">login</a>
+       
+    </form>
+
+    <script src="cadastro.js"></script>
+</body>
+</html
